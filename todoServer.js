@@ -42,6 +42,7 @@
   const express = require('express');
   const bodyParser = require('body-parser');
   const app = express();
+  const port = 3000;
   app.use(bodyParser.json());
   module.exports = app;
   
@@ -114,5 +115,9 @@
   
   app.use((req, res)=>{
     res.status(404).send("Route not found")
+  })
+
+  app.listen(port, (req, res) =>{
+    console.log(`Listening to port: ${port}`)
   })
   
